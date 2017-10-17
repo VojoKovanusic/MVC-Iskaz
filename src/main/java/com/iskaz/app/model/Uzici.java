@@ -1,13 +1,20 @@
 package com.iskaz.app.model;
 
+import java.io.Serializable;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 @Entity
-public class Uzici extends Sjeca {
+public class Uzici extends Sjeca implements Serializable{
  
  
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -7193200131352868032L;
+
 	public Uzici() {
 		super();
 	 

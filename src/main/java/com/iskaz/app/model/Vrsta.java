@@ -145,12 +145,13 @@ public class Vrsta {
 
 	@Override
 	public String toString() {
-		return "Vrsta [vrstaId=" + vrstaId + ", nazivVrste=" + nazivVrste + ", doznaka=" + doznaka + ", redovna="
-				+ redovna + ", uzici=" + uzici + ", njega=" + njega + ", proreda=" + proreda + ", vanredne=" + vanredne
-				+ ", sumaBruto=" + sumaBruto + ", sumaNeto=" + sumaNeto + ", neposjecenoBruto=" + neposjecenoBruto
-				+ ", primjedba=" + primjedba + "]";
-	}
 
-	 
+		return "\nVRSTA [" + nazivVrste + "] DOZNAKA=" + doznaka
+				+ ", SJECA->[ REDOVNA=" + redovna + " Sl.UŽICI=" + uzici
+				+ " PROREDA=" + proreda + "VANREDNE=" + vanredne + "NjEGA="
+				+ njega + " ], SUMA BRUTO=" + sumaBruto + ", SUMA" + " NETO="
+				+ sumaNeto + ", NEPOSJECENO BRUTO=" + neposjecenoBruto
+				+ ",Primjedba:" + primjedba + "";
+	}
 
 }

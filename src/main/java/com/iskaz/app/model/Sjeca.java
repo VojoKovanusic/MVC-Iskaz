@@ -13,6 +13,7 @@ public class Sjeca {
 	private int ogrev;
 	private int tehnika;
 	private int neto;
+	private double procenat;
 
 	public Sjeca() {
 		this.bruto = 0;
@@ -71,6 +72,14 @@ public class Sjeca {
 		this.tehnika += sjeca.getTehnika();
 		neto = this.tehnika + this.ogrev;
 
+	}
+
+	public double getProcenat() {
+		return procenat;
+	}
+
+	public void setProcenat(double procenat) {
+		this.procenat = procenat;
 	}
 
 

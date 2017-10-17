@@ -8,15 +8,16 @@ import javax.persistence.Id;
 public class Doznaka {
 	@Id@GeneratedValue
 	private int idDoznaka;
-	int bruto, neto, ogrev, tehnika;
-	double procenat;
+	int bruto, ogrev, tehnika;
+	int neto = this.tehnika + this.ogrev;
+	private double procenat = ((double) this.neto / (double) bruto) * 100;
  
 	public int getBruto() {
 		return bruto;
 	}
 
 	public void setBruto(int bruto) {
-		this.bruto = bruto;
+		this.bruto = (int) (procenat/neto);
 	}
 
 	public int getNeto() {
@@ -24,7 +25,7 @@ public class Doznaka {
 	}
 
 	public void setNeto(int neto) {
-		this.neto = neto;
+		this.neto = tehnika+ogrev;
 	}
 
 	public int getOgrev() {
