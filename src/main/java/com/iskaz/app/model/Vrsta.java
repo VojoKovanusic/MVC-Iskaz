@@ -9,6 +9,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.Null;
 
 @Entity
 public class Vrsta {
@@ -17,24 +19,26 @@ public class Vrsta {
 	private int vrstaId;
 	private String nazivVrste;
 	@OneToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name = "doznakaID")
+	//@JoinColumn(name = "doznakaID")
+	 
 	private Doznaka doznaka;
-
+	 
 	@OneToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name = "redovnaID")
+	//@JoinColumn(name = "redovnaID")
 	private Redovna redovna;
 	@OneToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name = "uziciID")
+	//@JoinColumn(name = "uziciID")
 	private Uzici uzici;
 	@OneToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name = "njegaID")
+	//@JoinColumn(name = "njegaID")
 	private Njega njega;
 	@OneToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name = "proredaID")
+	//@JoinColumn(name = "proredaID")
 	private Proreda proreda;
 	@OneToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name = "vanrednaID")
-	private Vanredne_i_stete vanredne;
+	//@JoinColumn(name = "stetaID")
+	
+	private Stete steta;
 
 	private int sumaBruto;
 	private int sumaNeto;
@@ -47,6 +51,22 @@ public class Vrsta {
 
 	public Vrsta() {
 	 
+	}
+
+	public int getVrstaId() {
+		return vrstaId;
+	}
+
+	public void setVrstaId(int vrstaId) {
+		this.vrstaId = vrstaId;
+	}
+
+	public Stete getSteta() {
+		return steta;
+	}
+
+	public void setSteta(Stete steta) {
+		this.steta = steta;
 	}
 
 	public String getNazivVrste() {
@@ -69,41 +89,35 @@ public class Vrsta {
 		return njega;
 	}
 
-	public void setNjega(Sjeca sjeca2) {
-		this.njega = (Njega) sjeca2;
+	public void setNjega(Njega sjeca2) {
+		this.njega =  sjeca2;
 	}
 
 	public Uzici getUzici() {
 		return uzici;
 	}
 
-	public void setUzici(Sjeca sjeca2) {
-		this.uzici = (Uzici) sjeca2;
+	public void setUzici(Uzici sjeca2) {
+		this.uzici =   sjeca2;
 	}
 
 	public Proreda getProreda() {
 		return proreda;
 	}
 
-	public void setProreda(Sjeca proreda) {
-		this.proreda = (Proreda) proreda;
+	public void setProreda(Proreda proreda) {
+		this.proreda = proreda;
 	}
 
 	public Redovna getRedovna() {
 		return redovna;
 	}
 
-	public void setRedovna(Sjeca redovna) {
-		this.redovna = (Redovna) redovna;
+	public void setRedovna(Redovna redovna) {
+		this.redovna =   redovna;
 	}
 
-	public Vanredne_i_stete getVanredne() {
-		return vanredne;
-	}
-
-	public void setVanredne(Sjeca vanredne) {
-		this.vanredne = (Vanredne_i_stete) vanredne;
-	}
+ 
 
 	public int getSumaBruto() {
 		return sumaBruto;
@@ -143,15 +157,5 @@ public class Vrsta {
 		this.primjedba = primjedba;
 	}
 
-	@Override
-	public String toString() {
-
-		return "\nVRSTA [" + nazivVrste + "] DOZNAKA=" + doznaka
-				+ ", SJECA->[ REDOVNA=" + redovna + " Sl.UŽICI=" + uzici
-				+ " PROREDA=" + proreda + "VANREDNE=" + vanredne + "NjEGA="
-				+ njega + " ], SUMA BRUTO=" + sumaBruto + ", SUMA" + " NETO="
-				+ sumaNeto + ", NEPOSJECENO BRUTO=" + neposjecenoBruto
-				+ ",Primjedba:" + primjedba + "";
-	}
-
+	 
 }

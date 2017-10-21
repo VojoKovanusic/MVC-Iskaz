@@ -7,28 +7,69 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 @Entity
-public class Uzici extends Sjeca implements Serializable{
- 
- 
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = -7193200131352868032L;
+public class Uzici {
+	@Id
+	@GeneratedValue
+	private int idUzici;
+	private int brutoUzici;
+	private double procenatUzici;
+	private int netoUzici;
+	private int tehnikaUzici;
+	private int ogrevUzici;
 
 	public Uzici() {
-		super();
-	 
+ 
 	}
 
-	public Uzici(int bruto, int ogrev, int tehnika) {
-		super(bruto, ogrev, tehnika);
-	 
+	public int getIdUzici() {
+		return idUzici;
 	}
 
-	@Override
-	public String toString() {
-		return "[bruto:" + getBruto() + " ogrev:" + getOgrev() + " tehnika"
-				+ getTehnika() + "]";
+	public void setIdUzici(int idUzici) {
+		this.idUzici = idUzici;
 	}
+
+	public int getBrutoUzici() {
+		brutoUzici=(int) ((getNetoUzici()/getProcenatUzici ())*100);
+
+		return brutoUzici;
+	}
+
+	public void setBrutoUzici(int brutoUzici) {
+		this.brutoUzici = brutoUzici;
+	}
+
+	public int getOgrevUzici() {
+		return ogrevUzici;
+	}
+
+	public void setOgrevUzici(int ogrevUzici) {
+		this.ogrevUzici = ogrevUzici;
+	}
+
+	public int getTehnikaUzici() {
+		return tehnikaUzici;
+	}
+
+	public void setTehnikaUzici(int tehnikaUzici) {
+		this.tehnikaUzici = tehnikaUzici;
+	}
+
+	public int getNetoUzici() {
+		netoUzici=ogrevUzici+tehnikaUzici;
+		return netoUzici;
+	}
+
+	public void setNetoUzici(int netoUzici) {
+		this.netoUzici = netoUzici;
+	}
+
+	public double getProcenatUzici() {
+		return procenatUzici;
+	}
+
+	public void setProcenatUzici(double procenatUzici) {
+		this.procenatUzici = procenatUzici;
+	}
+
 }
-

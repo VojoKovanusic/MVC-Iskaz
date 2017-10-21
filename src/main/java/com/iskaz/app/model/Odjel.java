@@ -33,7 +33,7 @@ public class Odjel {
 	private Collection<Odsjek> listaOdsjeka = new ArrayList<>();
 
 	public Odjel() {
-		super();
+		 
 	}
 	public Odjel(int br) {
 		brojOdjela=br;

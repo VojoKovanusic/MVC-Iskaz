@@ -8,15 +8,16 @@
 <!-- references our style sheet -->
 <link type="text/css" rel="stylesheet"
 	href="${pageContext.request.contextPath}/resources/css/style.css">
-<style>table, th, td {
-    border: 1px solid black;
-    
+<style>
+table, th, td {
+	border: 1px solid black;
 }
+
 th, td {
-    padding: 5px;
-    text-align: left;  
-      
-}erorKojiJaHocu
+	padding: 5px;
+	text-align: left;
+}
+erorKojiJaHocu
 </style>
 </head>
 <body bgcolor="#80d4ff">
@@ -25,8 +26,7 @@ th, td {
 	<h3>${porukaZaNaslov}</h3>
 
 	<table>
-	 
-		
+ 
 		<tr>
 			<td>Broj Odjela:</td>
 			<td>${odjel.brojOdjela}</td>
@@ -50,43 +50,89 @@ th, td {
 		<tr>
 			<td>nazivVrste:</td>
 			<td>${vrsta.nazivVrste}</td>
-		</tr>	<tr>
+		</tr>
+		<tr>
 			<td>Doz %:</td>
 			<td>${doznaka.procenat}</td>
 		</tr>
 		<tr>
-			<td> Doznak ogrev:</td>
+			<td>Doz %:</td>
+			<td>${doznaka.bruto}</td>
+		</tr>
+		<tr>
+			<td>Doznak ogrev:</td>
 			<td>${doznaka.ogrev}</td>
 		</tr>
 		<tr>
 			<td>Doz tehnika:</td>
 			<td>${doznaka.tehnika}</td>
 		</tr>
-<%-- 		<tr>
+		
+		<tr>
 			<td>redovna procenat:</td>
-			<td>${redovna.procenat}</td>
+			<td>${redovna.procenatRedovna}</td>
 		</tr>
 		<tr>
 			<td>redovna ogrev:</td>
-			<td>${redovna.ogrev}</td>
+			<td>${redovna.ogrevRedovna}</td>
 		</tr>
 		<tr>
 			<td>redovna tehnika:</td>
-			<td>${redovna.tehnika}</td>
-		</tr>	<tr>
+			<td>${redovna.tehnikaRedovna}</td>
+		</tr>	
+		
+		
+		<tr>
+			<td>Njega %:</td>
+			<td>${njega.procenatNjega}</td>
+		</tr>
+		<tr>
+			<td>Njega ogrev:</td>
+			<td>${njega.ogrevNjega}</td>
+		</tr>
+		<tr>
+			<td>Njega tehnika:</td>
+			<td>${njega.tehnikaNjega}</td>
+		</tr>
+		 
+		 		<tr>
 			<td>uzici procenat:</td>
-			<td>${uzici.procenat}</td>
+			<td>${uzici.procenatUzici}</td>
 		</tr>
 		<tr>
 			<td>uzici ogrev:</td>
-			<td>${uzici.ogrev}</td>
+			<td>${uzici.ogrevUzici}</td>
 		</tr>
 		<tr>
 			<td>uzici tehnika:</td>
-			<td>${uzici.tehnika}</td>
+			<td>${uzici.tehnikaUzici}</td>
 		</tr>
-	  --%>
-
+	   
+ 		<tr>
+			<td>Proreda procenat:</td>
+			<td>${proreda.procenatProreda}</td>
+		</tr>
+		<tr>
+			<td>Proreda ogrev:</td>
+			<td>${proreda.ogrevProreda}</td>
+		</tr>
+		<tr>
+			<td>Proreda tehnika:</td>
+			<td>${proreda.tehnikaProreda}</td>
+		</tr>
+	    		<tr>
+			<td>Stete procenat:</td>
+			<td>${stete.procenatStete}</td>
+		</tr>
+		<tr>
+			<td>Stete ogrev:</td>
+			<td>${stete.ogrevStete}</td>
+		</tr>
+		<tr>
+			<td>Stete tehnika:</td>
+			<td>${stete.tehnikaStete}</td>
+		</tr>
+	    
 	</table>
 </body>
 </html>

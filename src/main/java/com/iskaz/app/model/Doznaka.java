@@ -3,24 +3,34 @@ package com.iskaz.app.model;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.Null;
 
 @Entity
 public class Doznaka {
 	@Id@GeneratedValue
 	private int idDoznaka;
-	int bruto, ogrev, tehnika;
-	int neto = this.tehnika + this.ogrev;
-	private double procenat = ((double) this.neto / (double) bruto) * 100;
  
+private	int bruto;
+private double procenat ;
+private	int neto;
+private	int tehnika;
+private	int ogrev;
+
+	public Doznaka() { 
+}
+
 	public int getBruto() {
-		return bruto;
+		bruto=(int) ((getNeto()/getProcenat ())*100);
+ 		return bruto;
 	}
 
 	public void setBruto(int bruto) {
-		this.bruto = (int) (procenat/neto);
+		this.bruto=bruto;
 	}
 
 	public int getNeto() {
+		neto=ogrev+tehnika;
 		return neto;
 	}
 
@@ -52,20 +62,4 @@ public class Doznaka {
 		this.procenat = procenat;
 	}
 
-	@Override
-	public String toString() {
-		return "[bruto=" + bruto + ", neto=" + neto + ", ogrev=" + ogrev
-				+ ", tehnika=" + tehnika + ", iskoristenje: " + (int) procenat
-				+ " %]";
-	}
-
-	
-	public void rekapitulacijaDoznakePoVrstamaIsjeci(Doznaka doznaka) {
-		this.bruto += doznaka.getBruto();
-		this.ogrev += doznaka.getOgrev();
-		this.tehnika += doznaka.getTehnika();
-		neto = this.tehnika + this.ogrev;
-		this.procenat = ((double) this.neto / (double) bruto) * 100;
-
-	}
 }

@@ -2,13 +2,16 @@ package com.iskaz.app.controller;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.validation.Valid;
 
 import org.apache.jasper.tagplugins.jstl.core.ForEach;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -28,7 +31,7 @@ import com.iskaz.app.model.Odsjek;
 import com.iskaz.app.model.Proreda;
 import com.iskaz.app.model.Redovna;
 import com.iskaz.app.model.Uzici;
-import com.iskaz.app.model.Vanredne_i_stete;
+import com.iskaz.app.model.Stete;
 import com.iskaz.app.model.Vrsta;
 import com.iskaz.app.service.ServiceOdjel;
 
@@ -36,16 +39,11 @@ import com.iskaz.app.service.ServiceOdjel;
 public class HomeController {
 	@Autowired
 	ServiceOdjel serviceOdjel;
-
-	@RequestMapping(path = "/index", method = RequestMethod.GET)
-	public String goHome() {
-		return "lista-odjela";
-	}
-
+ 
 	@RequestMapping(value = "/home/page", method = RequestMethod.GET)
-	public ModelAndView tabela() {
-
+	public ModelAndView tabela( ) {
 		ModelAndView model = new ModelAndView("add-odjel-form");
+		 
 
 		return model;
 
@@ -55,29 +53,15 @@ public class HomeController {
 	public ModelAndView saveCustomer(
 
 			@ModelAttribute("odjel") Odjel odjel, @ModelAttribute("odsjek") Odsjek odsjek,
-			@ModelAttribute("vrsta") Vrsta vrsta, @ModelAttribute("doznaka") Doznaka doznaka
-	/*
-	 * ,@ModelAttribute("redovna") Redovna redovna,
-	 * 
-	 * @ModelAttribute("uzici") Uzici uzici
-	 * 
-	 * @,ModelAttribute("njega")Njega njega,
-	 * 
-	 * @ModelAttribute("proreda")Proreda proreda,
-	 * 
-	 * @ModelAttribute("vanredne")Vanredne_i_stete vanredne
-	 */
+			@ModelAttribute("vrsta") Vrsta vrsta, @ModelAttribute("doznaka") Doznaka doznaka,
+			@ModelAttribute("njega") Njega njega, @ModelAttribute("redovna") Redovna redovna,
+			@ModelAttribute("uzici") Uzici uzici, @ModelAttribute("proreda") Proreda proreda,
+			@ModelAttribute("stete") Stete stete  
 	) {
-
-		ModelAndView model = new ModelAndView("lista-odjela");
-		// vrsta.setRedovna(redovna);
-		// vrsta.setUzici(uzici);
-		vrsta.setDoznaka(doznaka);
-		odsjek.getListaVrsta().add(vrsta);
-		odjel.getListaOdsjeka().add(odsjek);
-		serviceOdjel.snimiOdjel(odjel);
-		return model;
-
+		  
+		return serviceOdjel.snimiSve(njega, odjel, odsjek, vrsta, doznaka, redovna, stete, uzici, proreda);
+		 
 	}
 
 }
+  

@@ -2,24 +2,93 @@ package com.iskaz.app.model;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class Njega extends Sjeca {
- 
-	private int idNjega;
-	public Njega() {
-		super();
-	}
+public class Njega   {
+	 
+	 @Id
+	 @GeneratedValue
+		private int idNjega;
+	    private int brutoNjega;
+	    private double procenatNjega;
+	    private int netoNjega;
+	    private int tehnikaNjega;
+		private int ogrevNjega;
+		
+			
+		public Njega( ) {
+			 
+		}
 
-	public Njega(int bruto, int ogrev, int tehnika) {
-		super(bruto, ogrev, tehnika);
-	}
+		public int getIdNjega() {
+			return idNjega;
+		}
 
-	@Override
-	public String toString() {
-		return "[bruto:" + getBruto() + " ogrev:" + getOgrev() + " tehnika"
-				+ getTehnika() + "]";
-	}
+		public void setIdNjega(int idNjega) {
+			this.idNjega = idNjega;
+		}
 
+		public int getBrutoNjega() {
+			brutoNjega=(int) ((getNetoNjega()/getProcenatNjega())*100);
+			return brutoNjega;
+		}
+
+
+
+		public void setBrutoNjega(int brutoNjega) {
+			this.brutoNjega = brutoNjega;
+		}
+
+
+
+		public int getOgrevNjega() {
+			return ogrevNjega;
+		}
+
+
+
+		public void setOgrevNjega(int ogrevNjega) {
+			this.ogrevNjega = ogrevNjega;
+		}
+
+
+
+		public int getTehnikaNjega() {
+			return tehnikaNjega;
+		}
+
+
+
+		public void setTehnikaNjega(int tehnikaNjega) {
+			this.tehnikaNjega = tehnikaNjega;
+		}
+
+
+
+		public int getNetoNjega() {
+			netoNjega=tehnikaNjega+ogrevNjega;
+			return netoNjega;
+		}
+
+
+
+		public void setNetoNjega(int netoNjega) {
+			this.netoNjega = netoNjega;
+		}
+
+
+
+		public double getProcenatNjega() {
+			return procenatNjega;
+		}
+
+
+
+		public void setProcenatNjega(double procenatNjega) {
+			this.procenatNjega = procenatNjega;
+		}
+	 
+		 
 }

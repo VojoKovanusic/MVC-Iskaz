@@ -9,7 +9,7 @@ public class Sjeca {
  @Id
  @GeneratedValue
 	private int idSjeca;
-	private int bruto;
+private int bruto;
 	private int ogrev;
 	private int tehnika;
 	private int neto;

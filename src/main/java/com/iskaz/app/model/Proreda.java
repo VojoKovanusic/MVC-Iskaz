@@ -5,21 +5,82 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 @Entity
-public class Proreda extends Sjeca {
- 
+public class Proreda   {
+	 @Id
+	 @GeneratedValue
+		private int idProreda;
+	private int brutoProreda;
+	private double procenatProreda;
+	private int netoProreda;
+	private int tehnikaProreda;
+		private int ogrevProreda;
+		
 
 	public Proreda() {
 		super();
 	}
 
-	public Proreda(int bruto, int ogrev, int tehnika) {
-		super(bruto, ogrev, tehnika);
-		// TODO Auto-generated constructor stub
+
+	public int getIdProreda() {
+		return idProreda;
 	}
 
-	@Override
-	public String toString() {
-		return "[bruto:" + getBruto() + " ogrev:" + getOgrev() + " tehnika"
-				+ getTehnika() + "]";
+
+	public void setIdProreda(int idProreda) {
+		this.idProreda = idProreda;
 	}
+
+
+	public int getBrutoProreda() {
+		brutoProreda=(int) ((getNetoProreda()/getProcenatProreda ())*100);
+		return brutoProreda;
+	}
+
+
+	public void setBrutoProreda(int brutoProreda) {
+		this.brutoProreda = brutoProreda;
+	}
+
+
+	public int getOgrevProreda() {
+		return ogrevProreda;
+	}
+
+
+	public void setOgrevProreda(int ogrevProreda) {
+		this.ogrevProreda = ogrevProreda;
+	}
+
+
+	public int getTehnikaProreda() {
+		return tehnikaProreda;
+	}
+
+
+	public void setTehnikaProreda(int tehnikaProreda) {
+		this.tehnikaProreda = tehnikaProreda;
+	}
+
+
+	public int getNetoProreda() {
+		netoProreda=ogrevProreda+tehnikaProreda;
+
+		return netoProreda;
+	}
+
+
+	public void setNetoProreda(int netoProreda) {
+		this.netoProreda = netoProreda;
+	}
+
+
+	public double getProcenatProreda() {
+		return procenatProreda;
+	}
+
+
+	public void setProcenatProreda(double procenatProreda) {
+		this.procenatProreda = procenatProreda;
+	}
+ 
 }

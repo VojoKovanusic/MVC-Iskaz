@@ -67,31 +67,67 @@
 						<td><label>Doznaka-tehnika:</label></td>
 						<td><input type="text" name="tehnika"></td>
 					</tr>
-				 <!-- 
-					<tr><tr>
-						<td><label>  Redovna % :</label></td>
-						<td><input type="text" name="redovna.procenat"></td>
+				 
+				 <tr>
+						<td><label> Redovna % :</label></td>
+						<td><input type="text" name="procenatRedovna"></td>
 					</tr><tr>
 						<td><label>Redovna-ogrev :</label></td>
-						<td><input type="text" name="redovna.ogrev"></td>
+						<td><input type="text" name="ogrevRedovna"></td>
 					</tr><tr>
 						<td><label>Redovna-tehnika:</label></td>
-						<td><input type="text" name="redovna.tehnika"></td>
+						<td><input type="text" name="tehnikaRedovna"></td>
 					</tr>
 				 
+				 
 					<tr>
+						<td><label>% Njega" :</label></td>
+						<td><input type="text" name="procenatNjega""></td>
+					</tr>
+					<tr>
+						<td><label>Njega"-ogrev :</label></td>
+						<td><input type="text" name="ogrevNjega""></td>
+					</tr>
+					<tr>
+						<td><label>Njega"-tehnika:</label></td>
+						<td><input type="text" name="tehnikaNjega"></td>
+					</tr>
+					 
 					
+				  
+					  
 					<tr><tr>
-						<td><label>  uzici % :</label></td>
-						<td><input type="text" name="procenat"></td>
+						<td><label> Uzici % :</label></td>
+						<td><input type="text" name="procenatUzici"></td>
 					</tr><tr>
 						<td><label>uzici-ogrev :</label></td>
-						<td><input type="text" name="ogrev"></td>
+						<td><input type="text" name="ogrevUzici"></td>
 					</tr><tr>
 						<td><label>uzici-tehnika:</label></td>
-						<td><input type="text" name="tehnika"></td>
-					</tr> -->
-				 
+						<td><input type="text" name="tehnikaUzici"></td>
+					</tr>  
+				 <tr><tr>
+						<td><label> Proreda % :</label></td>
+						<td><input type="text" name="procenatProreda"></td>
+					</tr><tr>
+						<td><label> Proreda-ogrev :</label></td>
+						<td><input type="text" name="ogrevProreda"></td>
+					</tr><tr>
+						<td><label> Proreda-tehnika:</label></td>
+						<td><input type="text" name="tehnikaProreda"></td>
+					</tr>  
+					
+					<tr><tr>
+						<td><label> Stete % :</label></td>
+						<td><input type="text" name="procenatStete"></td>
+					</tr><tr>
+						<td><label> Stete-ogrev :</label></td>
+						<td><input type="text" name="ogrevStete"></td>
+					</tr><tr>
+						<td><label> Stete-tehnika:</label></td>
+						<td><input type="text" name="tehnikaStete"></td>
+					</tr>
+					   
 					<tr>
 						<td><label></label></td>
 						<td><input type="submit" value="Snimi!" class="save" /></td>
@@ -99,12 +135,6 @@
 					</tr>
 
 				</tbody>
-
-
-			</table>
-
-		</form>
-
 	</div>
 
 
